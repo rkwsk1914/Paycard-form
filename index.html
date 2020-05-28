@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!-- Required meta tags --
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS --
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
+
+        <title>Vue.js Test</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div class="container">
+          <div class="row" id="example">
+            <div class="col-4">
+              <p>{{ num }}</p>
+              <p>{{ name }}</p>
+            </div>
+            <form class="col-6">
+              <div class="form-group row m-5">
+                <label class="col-2 col-form-label">Card Number</label>
+                <div class="col-10">
+                    <input v-model="num" type="text" class="form-control" name="num" maxlength="16" pattern="^[0-9]+$">
+                </div>
+              </div>
+              <div class="form-group row m-5">
+                <label class="col-2 col-form-label">Card Holders</label>
+                <div class="col-10">
+                    <input v-model="name" type="text" class="form-control" name="name" maxlength="30" pattern="^[A-Za-z]+$">
+                </div>
+              </div>
+              <div class="form-group row m-5">
+                <label class="col-2 col-form-label">Expiration Date</label>
+                <div class="col-10">
+                    <input type="month" class="form-control" name="lastname">
+                    <input type="date" class="form-control" name="lastname">
+                </div>
+              </div>
+              <div class="form-group row m-5">
+                <label class="col-2 col-form-label">CVV</label>
+                <div class="col-10">
+                    <input type="text" class="form-control" name="lastname">
+                </div>
+              </div>
+              <div class="form-group row">
+                  <div class="offset-2 col-10">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS, then Font Awesome --
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>-->
+        
+        <script src="main.js"></script>
+    </body>
+</html>
