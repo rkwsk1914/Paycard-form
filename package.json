@@ -1,0 +1,16 @@
+{
+  "name": "card",
+  "version": "1.0.0",
+  "description": "paycard",
+  "main": "main.js",
+  "scripts": {
+    "test": "a"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "animate.css": "^4.1.0",
+    "text-mask-addons": "^3.8.0",
+    "vue-text-mask": "^6.1.2"
+  }
+}
