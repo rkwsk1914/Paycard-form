@@ -22,7 +22,7 @@
           <div class="col-12 d-flex justify-content-center" id="cardVisual">
             <div class="animated flipInY cardWrapper" id="cardFront">
             <div id="cardType">{{getCardType}}</div>
-            <div class="row d-flex justify-content-around" id="cardNumber">
+            <label for="cardNumber" class="row d-flex justify-content-around cardNumber">
                 <template v-if="getCardType === 'amex'">
                  <span v-for="(n, index) in amexCardMask" :key="index">
                   <transition name="slide-fade-up">
@@ -69,9 +69,9 @@
                     </transition>
                   </span>
                 </template>
-              </div>
+              </label>
             <div class="row d-flex justify-content-around">
-              <label for="cardName col-3" id="cardName">
+              <label for="cardName" class="cardName">
                 <div class="cardLabel">Card Holder</div>
                 <transition name="slide-fade-up">
                   <div class="card-item__name" v-if="cardName.length" key="1">
@@ -87,7 +87,7 @@
                   <div class="cardNameItem" v-else key="2"  >Full Name</div>
                 </transition>
               </label>
-              <div id="cardDate col-3">
+              <label for="cardDate" id="cardDate">
                   <div class="m-0"><label for="cardMonth" class="m-0 cardLabel">Expires</label></div>
                   <label for="cardMonth" class=" cardMonth">
                     <transition name="slide-fade-up">
@@ -102,19 +102,19 @@
                       <span v-else key="2">YY</span>
                     </transition>
                   </label>
-                </div>              
+                </label>              
             </div>
           </div>
             <div class="animated flipInY cardWrapper d-none" id="cardBack">
-            <div id="cardCvv">
+            <label class="cardCvv">
                 <div class="cardLabel">CVV</div>
                 <div class="cardCvvItem">
                   <span v-for="(n, index) in cardCvv" :key="index">
                     *
                   </span>
                 </div>
-              </div>
-          </div>
+              </label>
+            </div>
           </div>
           <div class="col-12" id="cardForm">
             <div class="card">
@@ -127,6 +127,7 @@
                                 type="text" 
                                 :mask="generateCardNumberMask"
                                 class="form-control" 
+                                id="cardNumber"
                                 v-on:focus="reversetoFront"
                                 v-model="cardNumber">  
                             </div>
@@ -142,7 +143,7 @@
                                 v-model="cardName">  
                             </div>
                           </div>
-                    <div class="form-group row">
+                  <div class="form-group row">
                             <label class="col-2 col-form-label" for="cardMonth">Expiration Date</label>
                             <div class="col-4 d-flex justify-content-start">
                               <select class="form-control col-6" id="cardMonth" v-model="cardMonth" v-on:focus="reversetoFront">
@@ -159,7 +160,7 @@
                               </select>
                             </div>
                           </div>
-                    <div class="form-group row">
+                  <div class="form-group row">
                             <label class="col-2 col-form-label" for="cardCvv">CVV</label>
                             <div class="col-4">
                               <input
@@ -188,6 +189,7 @@
                                   </label>
                               </div>
                             </div>
+                          </div>
                   <div class="form-group row">
                     <div class="offset-2 col-10">
                       <button type="submit" class="btn btn-primary">Submit</button>
@@ -196,6 +198,7 @@
                 </form>
               </div>
             </div>
+        </div>
         </div>
       </div>
 
