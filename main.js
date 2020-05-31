@@ -2,20 +2,65 @@ const reverseCard =  () => {
   let cardFront = $('#cardFront');
   let cardBack = $('#cardBack');
   
-  if (cardFront.hasClass('d-none') === true){
-    cardFront.removeClass('d-none');
+  if (cardFront.hasClass('flip') === true){
+    cardBack.addClass('flip');
+    cardFront.removeClass('flip');
   }
   else {
-    cardFront.addClass('d-none');    
+    cardFront.addClass('flip');
+    cardBack.removeClass('flip');
   }
+};
+
+const forcusRepos = (element) => {
+  let forcusFrame = $('#forcusFrame');
+  let cardWrapper = $('.cardWrapper'); 
+  let classname = '.' + element;
+  let item = $(classname);
+  let cardpos = cardWrapper.offset();
+  let pos = item.offset();
+  let widthVal = item.outerWidth();
+  let heightVal = item.outerHeight();
+  let topVal;
   
-  if (cardBack.hasClass('d-none') === true){
-    cardBack.removeClass('d-none');
-  }
-  else {
-    cardBack.addClass('d-none');
-  }
-}
+  topVal = cardpos.top + (cardpos.top + cardWrapper.outerHeight()) - (pos.top + heightVal);
+  
+  forcusFrame.offset({ top: topVal, left: pos.left });
+  forcusFrame.css({
+    'opacity': 0.7,
+    'width': widthVal,
+    'height': heightVal 
+  });
+};
+
+const forcusPos = (element) => {
+  let forcusFrame = $('#forcusFrame');
+  let classname = '.' + element;
+  let item = $(classname);
+  let pos = item.offset();
+  let widthVal = item.outerWidth();
+  let heightVal = item.outerHeight();
+  
+  forcusFrame.offset({ top: pos.top, left: pos.left });
+  forcusFrame.css({
+    'opacity': 0.7,
+    'width': widthVal,
+    'height': heightVal 
+  });
+};
+
+const removeForcusFrame = () => {
+  let item = $('.cardWrapper');
+  let pos = item.offset();
+  let forcusFrame = $('#forcusFrame');
+    
+  forcusFrame.offset({ top: pos.top, left: pos.left });
+  forcusFrame.css({
+    'opacity': 0,
+    'width': '100%',
+    'height': '100%' 
+  });
+};
 
 const app = new Vue({
   el: '#app',
@@ -82,13 +127,17 @@ const app = new Vue({
     }
   },
   methods: {
-    reversetoFront() {
+    reversetoFront(element) {
+      forcusPos(element);
       if(this.cardStatus === 0){
         reverseCard();
+        forcusRepos(element);
         this.cardStatus = 1;
       }
     },
-    
+    removeForcus() {
+      removeForcusFrame();
+    },
     reversetoBack() {
       if(this.cardStatus === 1){
         reverseCard();
@@ -101,6 +150,6 @@ const app = new Vue({
       card.css({
         'background-image':'url(' + picuter + ')'
       });
-    }
+    },
   }
 });

@@ -7,6 +7,164 @@ body {
   font-size: 16px;
 }
 
+/*card visual*/
+
+#cardVisual {
+  position: relative;
+  z-index: 2;
+}
+
+.cardWrapper {
+  background-image: url(image/sample01.jpg);
+  background-size: cover;
+  height: 284px;
+  width: 450px;
+  border-radius: 25px;
+  position: absolute;
+  color: #fff;
+  box-shadow: 5px 5px 20px 5px #222;
+  transition: all 1s ease;
+  font-size: 16px;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+
+.flip {
+  transform: rotateX(180deg);
+}
+
+.cardTypeImg{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: top right;
+}
+
+#forcusFrame {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  border: solid 3px white;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 3;
+  transition: all 0.5s ease;
+}
+
+/*.forcusEl {
+  border: solid 3px white;
+  box-size
+  transition: all 0.5s ease-in-out;
+}*/
+
+/*Front*/
+.cardNumber {
+  font-weight: 700;
+  font-size: 1.8em;
+  padding: 1% 5%;
+  cursor: pointer;
+  width: 90%;
+  margin: 3% auto 6% auto
+}
+
+.cardLabel {
+  opacity: 0.7;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.under_item {
+  padding: 0 5%;
+}
+
+.cardName {
+  width: 75%;
+  padding: 1% 3%;
+}
+
+.cardDate {
+  width: 25%;
+  padding: 1% 3%;
+}
+
+.cardNameItem {
+  font-size: 1.3em;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+}
+
+.cardMonth, .cardYear {
+  width: 40%;
+  text-align: center;
+}
+
+.cardDateItem{
+  font-size: 1.3em;
+}
+
+#cardTypeFront {
+  height: 17%;
+  position: relative;
+  max-width: 23%;
+  width: 100%;
+  margin: 5% 0 0 72%;
+}
+
+
+/*Back*/
+#cardTypeBack {
+  height: 23%;
+  position: relative;
+  max-width: 28%;
+  width: 100%;
+  margin: 0 0 0 68%;
+}
+
+#blackline {
+  background-color: #333;
+  opacity: 0.7;
+  height: 15%;
+  margin: 10% 0 1% 0;
+}
+
+.cardCvvLabel {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.cardCvv {
+  width: 90%;
+  height: 30%;
+  margin: 0 5% 3% 5%;
+}
+
+.cardCvvItem {
+  width: 100%;
+  height: 45%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 3% 2% 2% 2%;
+  color: #333;
+}
+
+/*user form*/
+
+.card-body {
+  padding-top: 130px;
+}
+
+#cardForm {
+  position: relative;
+  margin-top: 200px;
+}
+
+.card {
+  position:relative;
+}
+
 .picuterFrame {
   width: 100px;
   height: 100px;
@@ -39,51 +197,20 @@ input[type=radio] {
 display: none;
 }
 
-.cardLabel {
-  opacity: 0.7;
-  font-size: 13px;
-  margin-bottom: 6px;
+@media screen and (max-width:576px) {
+  .cardWrapper {
+    height: 189px;
+    width: 300px;
+    font-size: 10px;
+  }
+  
+  .cardCvvItem {
+    border-radius: 5px;
+  }
+  
 }
 
-#cardForm {
-  position: relative;
-  margin-top: 200px;
-}
-
-#cardVisual {
-  position: relative;
-  z-index: 2;
-}
-
-.cardNumber {
-  font-weight: 500;
-  line-height: 1;
-  font-size: 27px;
-  margin-bottom: 35px;
-  display: inline-block;
-  padding: 10px 15px;
-  cursor: pointer;  
-}
-
-.cardWrapper {
-  /*background-color: red;*/
-  background-image: url(image/sample01.jpg);
-  background-size: cover;
-  max-width: 310px;
-  /*height: 63%;
-  width: 100%;*/
-  height: 189px;
-  width: 300px;
-  border-radius: 25px;
-  position: absolute;
-  color: #fff;
-  box-shadow: 5px 5px 20px 5px #222;
-}
-
-.card {
-  position:relative;
-}
-
+/*vue transion animation*/
 
 .slide-fade-up-enter-active {
   transition: all 0.25s ease-in-out;
