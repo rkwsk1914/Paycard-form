@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap");
 
 body {
-  background: #ddeefc;
+  background: #888;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
 }
@@ -50,12 +50,6 @@ body {
   z-index: 3;
   transition: all 0.5s ease;
 }
-
-/*.forcusEl {
-  border: solid 3px white;
-  box-size
-  transition: all 0.5s ease-in-out;
-}*/
 
 /*Front*/
 .cardNumber {
@@ -170,7 +164,7 @@ body {
   height: 100px;
   border: solid 10px #ddd;
   overflow: hidden;
-  box-shadow: 5px 5px 20px 5px #222;
+  /*box-shadow: 5px 5px 20px 5px #222;*/
   cursor: pointer;
 }
 
@@ -207,7 +201,10 @@ display: none;
   .cardCvvItem {
     border-radius: 5px;
   }
-  
+
+  #cardForm {
+    margin-top: 80px;
+  }
 }
 
 /*vue transion animation*/

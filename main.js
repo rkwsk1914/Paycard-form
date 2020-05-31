@@ -1,3 +1,7 @@
+/**
+ * function
+ * The number of functions is 4
+ */
 const reverseCard =  () => {
   let cardFront = $('#cardFront');
   let cardBack = $('#cardBack');
@@ -62,6 +66,10 @@ const removeForcusFrame = () => {
   });
 };
 
+
+/**
+ * Vue instance
+ */
 const app = new Vue({
   el: '#app',
   data() {

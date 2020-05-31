@@ -8,16 +8,12 @@
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
       
-      <!-- Animate CSS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
-      <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.css">-->
-
-      <title>Vue.js Test</title>
+      <title>Paycard Form</title>
       <link rel="stylesheet" href="style.css">
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
-      <div class="container">
+      <div class="container py-3 py-sm-5 ">
         <div class="row d-flex justify-content-start" id="app">
           <div class="col-12 d-flex justify-content-center" id="cardVisual">
             <div class="cardWrapper" id="cardFront">
@@ -131,13 +127,13 @@
               </div>
             </div>
           </div>
-          <div class="col-8 mx-auto" id="cardForm">
+          <div class="col-12 col-sm-8 mx-auto" id="cardForm">
             <div class="card">
               <div class="card-body">
                 <form>
                   <div class="form-group row">
-                            <label class="col-12 col-sm-2 col-form-label" for="cardNumber">Card Number</label>
-                            <div class="col-10">
+                            <label class="col-12 col-sm-3 col-form-label" for="cardNumber">Card Number</label>
+                            <div class="col-12 col-sm-9">
                                 <input
                                 type="text" 
                                 :mask="generateCardNumberMask"
@@ -149,8 +145,8 @@
                             </div>
                           </div>
                   <div class="form-group row">
-                            <label class="col-12 col-sm-2 col-form-label" for="cardName">Card Holders</label>
-                            <div class="col-10">
+                            <label class="col-12 col-sm-3 col-form-label" for="cardName">Card Holders</label>
+                            <div class="col-12 col-sm-9">
                               <input
                                 type="text" 
                                 id="cardName" 
@@ -162,15 +158,25 @@
                             </div>
                           </div>
                   <div class="form-group row">
-                            <label class="col-12 col-sm-2 col-form-label" for="cardMonth">Expiration Date</label>
-                            <div class="col-10 col-sm-4 d-flex justify-content-start">
-                              <select class="form-control col-6" id="cardMonth" v-model="cardMonth" v-on:focus="reversetoFront('cardDate')" v-on:blur="removeForcus">
+                            <label class="col-12 col-sm-3 col-form-label" for="cardMonth">Expiration Date</label>
+                            <div class="col-12 col-sm-6 d-flex justify-content-start">
+                              <select 
+                                class="form-control col-6" 
+                                id="cardMonth" 
+                                v-model="cardMonth" 
+                                v-on:focus="reversetoFront('cardDate')" 
+                                v-on:blur="removeForcus">
                                 <option value="" disabled selected>Month</option>
                                 <option v-bind:value="n < 10 ? '0' + n : n" v-for="n in 12" v-bind:disabled="n < minCardMonth" v-bind:key="n">
                                     {{n < 10 ? '0' + n : n}}
                                 </option>
                               </select>
-                              <select class="form-control col-6" id="cardYear" v-model="cardYear" v-on:focus="reversetoFront('cardDate')" v-on:blur="removeForcus">
+                              <select 
+                                class="form-control col-6" 
+                                id="cardYear" 
+                                v-model="cardYear" 
+                                v-on:focus="reversetoFront('cardDate')" 
+                                v-on:blur="removeForcus">
                                 <option value="" disabled selected>Year</option>
                                 <option v-bind:value="index + minCardYear" v-for="(n, index) in 12" v-bind:key="n">
                                     {{index + minCardYear}}
@@ -179,8 +185,8 @@
                             </div>
                           </div>
                   <div class="form-group row">
-                            <label class="col-12 col-sm-2 col-form-label" for="cardCvv">CVV</label>
-                            <div class="col-4">
+                            <label class="col-12 col-sm-3 col-form-label" for="cardCvv">CVV</label>
+                            <div class="col-6 col-sm-6">
                               <input
                                 type="text" 
                                 id="cardCvv" 
@@ -193,9 +199,9 @@
                             </div>
                       </div>
                   <div class="form-group row">
-                            <label class="col-12 col-sm-2 col-form-label" for="cardImage">Card Image</label>
-                            <div class="col-10 d-flex justify-content-around">
-                              <div v-for="picuter in picuters">
+                            <label class="col-12 col-sm-3 col-form-label" for="cardImage">Card Image</label>
+                            <div class="col-12 col-sm-9 d-flex justify-content-start">
+                              <div v-for="picuter in picuters" class="mr-sm-4 mr-1">
                                   <label>
                                     <input 
                                       type="radio"
@@ -211,8 +217,8 @@
                             </div>
                           </div>
                   <div class="form-group row">
-                    <div class="offset-2 col-10">
-                      <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="col-12 d-flex justify-content-center">
+                      <button type="submit" class="col-4 btn btn-block btn-primary">Submit</button>
                     </div>
                   </div>
                 </form>
@@ -228,7 +234,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
       <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
-      <!--<script src="https://cdn.jsdelivr.net/npm/vue-text-mask@6.1.2/dist/vueTextMask.min.js"></script>-->
+
       <script src="main.js"></script>
     </body>
 </html>
