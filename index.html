@@ -19,11 +19,13 @@
             <div class="cardWrapper" id="cardFront">
               <div id="forcusFrame"></div>
               <div class="d-flex justify-content-end" id="cardTypeFront">
-                <img v-bind:src="'image/' + getCardType + '.png'" 
-                v-if="getCardType" 
-                v-bind:key="getCardType" 
-                alt="" 
-                class="cardTypeImg">
+                <transition name="slide-fade-up">
+                  <img v-bind:src="'image/' + getCardType + '.png'" 
+                  v-if="getCardType" 
+                  v-bind:key="getCardType" 
+                  alt="" 
+                  class="cardTypeImg">
+                </transition>
             </div>
               <label for="cardNumber" class="row d-flex justify-content-around cardNumber">
                 <template v-if="getCardType === 'amex'">
