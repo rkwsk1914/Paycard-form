@@ -2,6 +2,17 @@
  * function
  * The number of functions is 4
  */
+
+//import Vue from 'vue'
+
+//npmでvue-text-maskを使用
+//import MaskedInput from '/vue-text-mask'
+//import emailMask from './text-mask-addons/dist/emailMask'
+
+//CDNでvue-text-maskを使用
+//const MaskedInput = window.vueTextMask.default;
+//const emailMask = window.emailMask.default;
+
 const reverseCard =  () => {
   let cardFront = $('#cardFront');
   let cardBack = $('#cardBack');
@@ -72,6 +83,9 @@ const removeForcusFrame = () => {
  */
 const app = new Vue({
   el: '#app',
+  components: {
+    //MaskedInput,
+  },
   data() {
     return {
       cardName: "",
